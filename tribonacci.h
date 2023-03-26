@@ -1,0 +1,1 @@
+int trib(int fn);
