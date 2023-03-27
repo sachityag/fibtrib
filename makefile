@@ -1,11 +1,14 @@
+fibtrib.out: fibtrib.o fibonacci.o tribonacci.o
+	gcc -o fibtrib.out fibtrib.o fibonacci.o tribonacci.o
+
 trib.out: tribtest.o tribonacci.o
 	gcc -o trib.out tribtest.o tribonacci.o
 
+tribtest.o: tribtest.c tribonacci.o
+	gcc tribtest.c -o tribtest.o -c
+
 fib.out: fibtest.o fibonacci.o
 	gcc -o fib.out fibtest.o fibonacci.o
-
-tribtest.o: tribtest.c tribonacci.h
-	gcc tribtest.c -o tribtest.o -c
 
 fibtest.o: fibtest.c fibonacci.h
 	gcc fibtest.c -o fibtest.o -c
